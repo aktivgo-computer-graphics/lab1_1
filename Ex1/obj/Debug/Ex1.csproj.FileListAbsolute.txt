@@ -1,0 +1,10 @@
+C:\Users\Владислав\OneDrive - vyatsu\Учеба\3 курс\6 семестр\Компьютерная графика\Lab1_1\Lab1_1\Ex1\bin\Debug\Ex1.exe.config
+C:\Users\Владислав\OneDrive - vyatsu\Учеба\3 курс\6 семестр\Компьютерная графика\Lab1_1\Lab1_1\Ex1\bin\Debug\Ex1.exe
+C:\Users\Владислав\OneDrive - vyatsu\Учеба\3 курс\6 семестр\Компьютерная графика\Lab1_1\Lab1_1\Ex1\bin\Debug\Ex1.pdb
+C:\Users\Владислав\OneDrive - vyatsu\Учеба\3 курс\6 семестр\Компьютерная графика\Lab1_1\Lab1_1\Ex1\obj\Debug\Ex1.csproj.AssemblyReference.cache
+C:\Users\Владислав\OneDrive - vyatsu\Учеба\3 курс\6 семестр\Компьютерная графика\Lab1_1\Lab1_1\Ex1\obj\Debug\Ex1.Properties.Resources.resources
+C:\Users\Владислав\OneDrive - vyatsu\Учеба\3 курс\6 семестр\Компьютерная графика\Lab1_1\Lab1_1\Ex1\obj\Debug\Ex1.csproj.GenerateResource.cache
+C:\Users\Владислав\OneDrive - vyatsu\Учеба\3 курс\6 семестр\Компьютерная графика\Lab1_1\Lab1_1\Ex1\obj\Debug\Ex1.csproj.CoreCompileInputs.cache
+C:\Users\Владислав\OneDrive - vyatsu\Учеба\3 курс\6 семестр\Компьютерная графика\Lab1_1\Lab1_1\Ex1\obj\Debug\Ex1.exe
+C:\Users\Владислав\OneDrive - vyatsu\Учеба\3 курс\6 семестр\Компьютерная графика\Lab1_1\Lab1_1\Ex1\obj\Debug\Ex1.pdb
+C:\Users\Владислав\OneDrive - vyatsu\Учеба\3 курс\6 семестр\Компьютерная графика\Lab1_1\Lab1_1\Ex1\obj\Debug\Ex1.Form1.resources
