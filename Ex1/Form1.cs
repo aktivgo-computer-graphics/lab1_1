@@ -14,21 +14,21 @@ namespace Ex1
     {
         private Graphics Graph;
         private Pen MyPen;
-        private int PiMode; // 0 - выкл, 1 - вкл, числа, 2 - вкл, pi числа
+        private bool PiMode;
 
         public Form1()
         {
             InitializeComponent();
             Graph = CreateGraphics();
             MyPen = new Pen(Color.Black);
-            PiMode = 2;
+            PiMode = false;
         }
         
         private void paintButton_Click(object sender, EventArgs e)
         {
             const int k = 200;
-            const double xMin = -2;
-            const double xMax = 2;
+            const int xMin = -2;
+            const int xMax = 2;
             const double step = 0.01;
             
             Graph.Clear(Color.White);
@@ -60,17 +60,18 @@ namespace Ex1
             Graph.DrawLine(MyPen, 0, yMiddle, ClientSize.Width, yMiddle);
             Graph.DrawLine(MyPen, xMiddle, 0, xMiddle, ClientSize.Height);
             Graph.DrawString("0", new Font(FontFamily.GenericSansSerif, 10), Brushes.Black, xMiddle + 7, yMiddle + 7);
-            
-            for (int x = xMiddle + k, i = 0; x < ClientSize.Width; x += k, i++)
+
+            int i = 0;
+            for (int x = xMiddle + k; x < ClientSize.Width; x += k, i++)
             {
                 Graph.DrawLine(MyPen, x, yMiddle - 5, x, yMiddle + 5);
                 ChooseNumAndDraw(i, false, xMiddle, k, x + 5, yMiddle + 15);
             }
-            for (int x = xMiddle - k, i = 0; x > 0; x -= k, i++)
+            i = 0;
+            for (int x = xMiddle - k; x > 0; x -= k, i++)
             {
                 Graph.DrawLine(MyPen, x, yMiddle - 5, x, yMiddle + 5);
                 ChooseNumAndDraw(i, true, xMiddle, k, x - 7, yMiddle + 15);
-                //Graph.DrawString(((x - xMiddle) / k).ToString(), new Font(FontFamily.GenericSansSerif, 10), Brushes.Black, x - 7, yMiddle + 15);
             }
             for (int y = yMiddle + k; y < ClientSize.Width; y += k)
             {
@@ -86,49 +87,32 @@ namespace Ex1
 
         private void ChooseNumAndDraw(int i, bool minus, int xMiddle, int k, int x, int y)
         {
-            string numStr = "";
-            double num = 0;
-            switch (i)
+            if (PiMode)
             {
-                case 0:
-                    numStr = minus ? "-π/2" : "π/2";
-                    num = minus ? -3.14 : 3.14;
-                    break;
-                case 1:
-                    numStr = minus ? "-π" : "π";
-                    num = minus ? -6.28 : 6.28;
-                    break;
-                case 2:
-                    numStr = minus ? "-3π/2" : "3π/2";
-                    num = minus ? -9.42 : 9.42;
-                    break;
-                case 3:
-                    numStr = minus ? "-2π" : "2π";
-                    num = minus ? -12.56 : 12.56;
-                    break;
-                case 4:
-                    numStr = minus ? "-5π/2" : "5π/2";
-                    num = minus ? -15.7 : 15.7;
-                    break;
+                string piNum = "";
+                switch (i)
+                {
+                    case 0:
+                        piNum = minus ? "-π/2" : "π/2";
+                        break;
+                    case 1:
+                        piNum = minus ? "-π" : "π";
+                        break;
+                    case 2:
+                        piNum = minus ? "-3π/2" : "3π/2";
+                        break;
+                    case 3:
+                        piNum = minus ? "-2π" : "2π";
+                        break;
+                    case 4:
+                        piNum = minus ? "-5π/2" : "5π/2";
+                        break;
+                }
+                Graph.DrawString(piNum, new Font(FontFamily.GenericSansSerif, 10), Brushes.Black, x, y);
+                return;
             }
             
-            switch (PiMode)
-            {
-                case 0:
-                    DrawString(((x - xMiddle) / k).ToString(), x, y);
-                    break;
-                case 1:
-                    DrawString(num.ToString(), x, y);
-                    break;
-                case 2:
-                    DrawString(numStr, x, y);
-                    break;
-            }
-        }
-
-        private void DrawString(string num, int x, int y)
-        {
-            Graph.DrawString(num, new Font(FontFamily.GenericSansSerif, 10), Brushes.Black, x, y);
+            Graph.DrawString(((x - xMiddle) / k).ToString(), new Font(FontFamily.GenericSansSerif, 10), Brushes.Black, x, y);
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
