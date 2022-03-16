@@ -21,7 +21,7 @@ namespace Ex1
             InitializeComponent();
             Graph = CreateGraphics();
             MyPen = new Pen(Color.Black);
-            PiMode = false;
+            PiMode = true;
         }
         
         private void paintButton_Click(object sender, EventArgs e)
@@ -111,8 +111,29 @@ namespace Ex1
                 Graph.DrawString(piNum, new Font(FontFamily.GenericSansSerif, 10), Brushes.Black, x, y);
                 return;
             }
-            
-            Graph.DrawString(((x - xMiddle) / k).ToString(), new Font(FontFamily.GenericSansSerif, 10), Brushes.Black, x, y);
+            else
+            {
+                string piNum = "";
+                switch (i)
+                {
+                    case 0:
+                        piNum = minus ? (-Math.Round(Math.PI / 2, 2)).ToString() : Math.Round(Math.PI / 2, 2).ToString();
+                        break;
+                    case 1:
+                        piNum = minus ? (-Math.Round(Math.PI, 2)).ToString() : Math.Round(Math.PI, 2).ToString();
+                        break;
+                    case 2:
+                        piNum = minus ? (-Math.Round(3 * Math.PI, 2)).ToString() : Math.Round(3 * Math.PI, 2).ToString();
+                        break;
+                    case 3:
+                        piNum = minus ? (-Math.Round(2 * Math.PI, 2)).ToString() : Math.Round(2 * Math.PI, 2).ToString();
+                        break;
+                    case 4:
+                        piNum = minus ? (-Math.Round(5 * Math.PI, 2)).ToString() : Math.Round(5 * Math.PI, 2).ToString();
+                        break;
+                }
+                Graph.DrawString(piNum, new Font(FontFamily.GenericSansSerif, 10), Brushes.Black, x, y);
+            }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
